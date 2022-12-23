@@ -1,14 +1,27 @@
-export interface TaskProps {
-  id: string,
-  title: string,
-  status: boolean,
+export interface Show {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
 }
 
-export interface TaskApi {
-  title: string,
-  status: boolean,
+export interface ShowSearchApi {
+  score: number;
+  show: {
+    id: number;
+    name: string;
+    image: {
+      medium: string;
+    }
+    summary: string;
+  }
 }
 
-export interface TasksApiList {
-  [id: string]: TaskApi;
+export interface ShowApi {
+    id: number;
+    name: string;
+    image: {
+      medium: string;
+    }
+    summary: string;
 }
