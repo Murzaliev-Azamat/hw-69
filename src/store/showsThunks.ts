@@ -7,7 +7,6 @@ export const fetchShows = createAsyncThunk<Show[], string>(
   async (name) => {
     const showsResponse = await axiosApi.get<ShowSearchApi[] | []>('search/shows?q=' + name);
     const shows = showsResponse.data;
-    console.log(shows)
     const allShows: Show[] = shows.map((show) => (
         {
           id: show.show.id,
@@ -26,7 +25,6 @@ export const fetchOneShow = createAsyncThunk<Show, number>(
   async (id) => {
     const showResponse = await axiosApi.get<ShowApi>('shows/' + id);
     const show = showResponse.data;
-    console.log(show)
     return (
         {
           id: show.id,
